@@ -19,6 +19,12 @@ class App extends React.Component {
                 id: 4
             }
         ]
+    } 
+
+    handleRemovePlayer = (id) => {
+        this.setState( prevState => ({
+            players: prevState.players.filter(p => p.id !== id)
+        }));
     }
 
     render() {
@@ -32,7 +38,9 @@ class App extends React.Component {
                 { this.state.players.map( player => 
                     <Player
                         name= { player.name }
+                        id={ player.id }
                         key={ player.id.toString() }
+                        removePlayer={ this.handleRemovePlayer }
                     />
                 )}
             </div>
@@ -54,6 +62,7 @@ const Player = (props) => {
     return (
         <div className="player">
             <span className="player-name">
+                <button className="remove-player" onClick={ () => props.removePlayer(props.id) }>✖</button>
                 { props.name }
             </span>
             <Counter />
