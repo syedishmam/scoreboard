@@ -3,19 +3,19 @@ class App extends React.Component {
     state = {
         players: [
             {
-                name: "Ish",
+                name: "Dogs",
                 id: 1
             },
             {
-                name: "Nab",
+                name: "Cats",
                 id: 2
             },
             {
-                name: "RJ",
+                name: "Fish",
                 id: 3
             },
             {
-                name: "BJ",
+                name: "Cows",
                 id: 4
             }
         ]
